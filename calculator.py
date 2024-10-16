@@ -13,10 +13,5 @@ class Calculator:
             return "Error: Division by zero"
         return num1 / num2
     
-    print(add(1,2))
-    print(subtract(5,6))
-    print(multiply(1,5))
-    print(division(2,0))
-    print(division(2,2))
     
 
