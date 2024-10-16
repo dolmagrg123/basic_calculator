@@ -58,7 +58,7 @@ pipeline {
                     sh '''
                         [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
                         ssh-keyscan -t rsa,dsa ${WEB_SERVER_IP} >> ~/.ssh/known_hosts
-                        ssh ubuntu@${WEB_SERVER_IP} "curl -o ~/setup.sh https://raw.githubusercontent.com/dolmagrg123/microblog_VPC_deployment/main/scripts/setup.sh && bash ~/setup.sh ${APPLICATION_SERVER_IP}"
+                        ssh ubuntu@${WEB_SERVER_IP} "curl -o ~/setup.sh https://raw.githubusercontent.com/dolmagrg123/basic_calculator/refs/heads/main/scripts/setup.sh && bash ~/setup.sh ${APPLICATION_SERVER_IP}"
                     
                     '''
     }
