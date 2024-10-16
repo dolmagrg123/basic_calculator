@@ -8,6 +8,7 @@ calculator = Calculator()  # Instantiate the Calculator class
 def calculator_view():
     result = None  # Initialize result to None
     error_message = None  # Initialize error message to None
+    history = []  # List to store calculation history
 
     if request.method == 'POST':
         try:
@@ -28,12 +29,15 @@ def calculator_view():
             else:
                 raise ValueError("Invalid operation")  # Handle unexpected operations
             
+            # Save the calculation to history
+            history.append(f"{num1} {operation} {num2} = {result}")
 
         except ValueError as e:
+            # Handle input conversion errors
             error_message = f"Input error: {str(e)}"
-    
-    return render_template('index.html', result=result, error_message=error_message)
+        
+    # Render the HTML template with results, error messages, and history
+    return render_template('index.html', result=result, error_message=error_message, history=history)
 
 if __name__ == '__main__':
     app.run(debug=True)  # Run the app in debug mode for development
-

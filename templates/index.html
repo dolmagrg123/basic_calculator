@@ -25,7 +25,17 @@
         <input type="submit" value="Calculate">  <!-- Submit button to calculate -->
     </form>
 
-    <h2>Result: {{ result }}</h2>  <!-- Display the calculation result -->
+    {% if error_message %}
+        <h2 style="color: red;">{{ error_message }}</h2>  <!-- Display error message if any -->
+    {% elif result %}
+        <h2>Result: {{ result }}</h2>  <!-- Display the calculation result -->
+    {% endif %}
 
+    <h3>History:</h3>
+    <ul>
+        {% for entry in history %}
+            <li>{{ entry }}</li>  <!-- Display history of calculations -->
+        {% endfor %}
+    </ul>
 </body>
 </html>
