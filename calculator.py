@@ -1,4 +1,5 @@
 class Calculator:
+    #functions that returns different operations between two numbers
     def add(num1, num2):
         return num1 + num2
 
