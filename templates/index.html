@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Flask Calculator</title>
 </head>
 <body>
-    <h1>Basic Calculator</h1>
+    <h1>Advanced Calculator</h1>
     <form method="POST">
         <label for="num1">Number 1:</label>
         <input type="number" name="num1" required><br><br>
@@ -20,8 +22,10 @@
             <option value="divide">Divide</option>
         </select><br><br>
 
-        <input type="submit" value="Calculate">
+        <input type="submit" value="Calculate">  <!-- Submit button to calculate -->
     </form>
+
+    <h2>Result: {{ result }}</h2>  <!-- Display the calculation result -->
 
 </body>
 </html>
